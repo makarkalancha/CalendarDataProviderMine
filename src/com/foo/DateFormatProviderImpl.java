@@ -10,46 +10,39 @@ import java.util.Locale;
  * Date: 27/02/2016
  * Time: 22:01
  */
-class DateFormatProviderImpl extends DateFormatProvider
-{
+public class DateFormatProviderImpl extends DateFormatProvider {
     private Locale newAtlantis = new Locale("en", "NA");
-    public Locale[] getAvailableLocales()
-    {
-        return new Locale [] {newAtlantis};
-    }
-    public DateFormat getTimeInstance(int style, Locale locale)
-    {
+
+    @Override
+    public DateFormat getTimeInstance(int style, Locale locale) {
         if (locale.equals(newAtlantis))
         {
             return new SimpleDateFormat("-HH.mm.ss-");
         }
         return null;
     }
-    public DateFormat getDateTimeInstance(int dateStyle, Locale locale)   {
-        if (locale.equals(newAtlantis))
-        {
-            return new SimpleDateFormat("yyyy~MM~dd HH.mm.ss");
-        }
-        return null;
-    }
-    public DateFormat getDateTimeInstance(int dateStyle,
-                                          int timeStyle,
-                                          Locale locale)
-    {
-        if (locale.equals(newAtlantis))
-        {
-            return new SimpleDateFormat("yyyy~MM~dd HH.mm.ss");
-        }
-        return null;
-    }
+
     @Override
-    public DateFormat getDateInstance(int style, Locale locale)
-    {
+    public DateFormat getDateInstance(int style, Locale locale) {
         if (locale.equals(newAtlantis))
         {
-            return new SimpleDateFormat("yyyy~MM~dd HH.mm.ss");
+            return new SimpleDateFormat("yyyy~MM~dd");
         }
         return null;
+    }
+
+    @Override
+    public DateFormat getDateTimeInstance(int dateStyle, int timeStyle, Locale locale) {
+        if (locale.equals(newAtlantis))
+        {
+            return new SimpleDateFormat("yyyy~MM~dd -HH.mm.ss-");
+        }
+        return null;
+    }
+
+    @Override
+    public Locale[] getAvailableLocales() {
+        return new Locale [] {newAtlantis};
     }
 }
 

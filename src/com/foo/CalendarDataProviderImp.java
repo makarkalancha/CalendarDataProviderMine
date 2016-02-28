@@ -10,6 +10,7 @@ import java.util.spi.CalendarDataProvider;
  */
 public class CalendarDataProviderImp extends CalendarDataProvider {
     private Locale myLocale = new Locale("me_ME");
+
     @Override
     public int getFirstDayOfWeek(Locale locale) {
         if(locale.equals(myLocale)) {
@@ -25,7 +26,6 @@ public class CalendarDataProviderImp extends CalendarDataProvider {
 
     @Override
     public Locale[] getAvailableLocales() {
-//        return new Locale[]{new Locale.Builder().setLanguageTag("me-ME-u-fw-mon").build()};
         return new Locale[]{myLocale};
 
     }
