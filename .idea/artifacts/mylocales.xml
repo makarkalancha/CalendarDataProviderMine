@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="mylocales">
+    <output-path>$PROJECT_DIR$/out/artifacts/mylocales</output-path>
+    <root id="archive" name="mylocales.jar">
+      <element id="directory" name="META-INF">
+        <element id="dir-copy" path="$PROJECT_DIR$/META-INF" />
+        <element id="module-output" name="CalendarDataProviderMine" />
+      </element>
+    </root>
+  </artifact>
+</component>
